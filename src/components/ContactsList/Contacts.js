@@ -1,11 +1,7 @@
 import css from './Contacts.module.css';
 
-// function Contacts({ data }) {
-//   const { contacts } = data;
-
-function Contacts({data }) {
-
-  console.log('contacts:',data)
+function Contacts({ data }) {
+  console.log('contacts:', data);
 
   return (
     <div>
@@ -23,5 +19,3 @@ function Contacts({data }) {
 }
 
 export default Contacts;
-
-//{name}{number}
