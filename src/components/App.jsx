@@ -21,7 +21,6 @@ class App extends Component {
 
   onChangeFilter = event => {
     this.setState({ filter: event.target.value });
-    console.log(this.state.filter);
   };
 
   render() {
@@ -35,7 +34,7 @@ class App extends Component {
     return (
       <>
         <div className={css.section}>
-          <Chapter title="Phonebook">
+          <Chapter title="PHONEBOOK">
             <Name onSubmit={this.addContact} />
           </Chapter>
         </div>
