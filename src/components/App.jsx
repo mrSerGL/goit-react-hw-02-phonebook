@@ -41,7 +41,7 @@ class App extends Component {
 
         {this.state.contacts.length > 0 && (
           <div className={css.section}>
-            <Chapter title="Contacts">
+            <Chapter title="contacts">
               <FilterInput
                 value={filter}
                 onChangeFilter={this.onChangeFilter}

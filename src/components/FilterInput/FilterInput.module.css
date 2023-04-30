@@ -2,6 +2,7 @@
   .input__name{
     margin-left: 16px; 
     font-size: 14px;  
+    color: gray;
   }
 
   .input{

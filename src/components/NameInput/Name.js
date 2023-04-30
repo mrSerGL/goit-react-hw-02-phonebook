@@ -51,7 +51,7 @@ class Name extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <Chapter title="Name">
+        <Chapter title="name">
           <label htmlFor={this.nameInputId1}>
             <input
               type="text"
@@ -65,7 +65,7 @@ class Name extends Component {
             />
           </label>
         </Chapter>
-        <Chapter title="Number">
+        <Chapter title="number">
           <label htmlFor={this.nameInputId2}>
             <input
               type="tel"
@@ -80,7 +80,7 @@ class Name extends Component {
           </label>
         </Chapter>
         <button type="submit" className={css.button}>
-          Add contact
+          add contact
         </button>
       </form>
     );
