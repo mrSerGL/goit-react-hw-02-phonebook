@@ -10,50 +10,58 @@ class Name extends Component {
     number: '',
   };
 
-
-  // nameInputId1 = nanoid();
-  // nameInputId2 = nanoid();
+  nameInputId1 = nanoid();
+  nameInputId2 = nanoid();
 
   handleChangeName = event => {
+    // console.log('event.currentTarget.value:', event.currentTarget.value);
     const id = nanoid();
-
-    this.setState({
-      id: id,
-      name: event.currentTarget.value,
-    });
+    this.setState(
+      {
+        id: id,
+        name: event.currentTarget.value,
+      },
+      () => {
+        // console.log('this.state Name.name:', this.state);
+      }
+    );
   };
 
   handleChangeNumber = event => {
+    // console.log('event.currentTarget.value:', event.currentTarget.value);
     const id = nanoid();
-
-    this.setState({
-      id: id,
-      number: event.currentTarget.value,
-    });
+    this.setState(
+      {
+        id: id,
+        number: event.currentTarget.value,
+      },
+      () => {
+        // console.log('this.state Name.number:', this.state);
+      }
+    );
   };
 
   handleSubmit = event => {
     event.preventDefault();
-
-    console.log(this.props.myContacts)
 
     const existingContact = this.props.myContacts.find(
       contact =>
         contact.name.toLowerCase() === this.state.name.toLowerCase() ||
         contact.number === this.state.number
     );
-  
+
     if (existingContact) {
-      alert(`${this.state.name} is already exists in contacts!`);
+      alert(`${existingContact.name} is already exists in contacts!`);
       return;
     }
 
-    // const { name, number } = this.state;
+    const id = nanoid();
 
-    // if (this.props.myContacts.some(contact => contact.name === name)) {
-    //   alert(`${name} is already exists in contacts!`);
-    //   return;
-    // }
+    this.setState({
+      id: id,
+    });
+
+    // console.log('Submiteb state:', this.state);
 
     this.props.onSubmit(this.state);
 
@@ -67,6 +75,9 @@ class Name extends Component {
     formRef.reset();
   };
 
+  // clearForm =()=>{
+
+  // }
 
   // =============== render area ======================
   render() {

@@ -24,7 +24,6 @@ class App extends Component {
   };
 
   deleteContact = contactId => {
-
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));
@@ -46,7 +45,7 @@ class App extends Component {
           </Chapter>
         </div>
 
-        {this.state.contacts.length > 0 && (
+        {/* {this.state.contacts.length > 0 && (
           <div className={css.section}>
             <Chapter title="contacts">
               <FilterInput
@@ -59,7 +58,17 @@ class App extends Component {
               />
             </Chapter>
           </div>
-        )}
+        )} */}
+
+        <div className={css.sectionContacts}>
+          <Chapter title="contacts">
+            <FilterInput value={filter} onChangeFilter={this.onChangeFilter} />
+            <Contacts
+              data={filteredContacts}
+              onDeleteContact={this.deleteContact}
+            />
+          </Chapter>
+        </div>
       </>
     );
   }
