@@ -35,6 +35,14 @@ class Name extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
+    console.log(this.props.myContacts)
+
+    if (this.props.myContacts.includes(this.state.name)){
+      console.log('in the list')
+      alert(`${this.state.name} is allready in contacts` );
+      return;
+    }
+
     this.props.onSubmit(this.state);
 
     this.setState({
@@ -46,6 +54,7 @@ class Name extends Component {
     const formRef = document.querySelector('form');
     formRef.reset();
   };
+
 
   // =============== render area ======================
   render() {

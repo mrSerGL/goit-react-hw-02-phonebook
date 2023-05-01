@@ -24,7 +24,6 @@ class App extends Component {
   };
 
   deleteContact = contactId => {
-    console.log(contactId);
 
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== contactId),
@@ -43,7 +42,7 @@ class App extends Component {
       <>
         <div className={css.section}>
           <Chapter title="PHONEBOOK">
-            <Name onSubmit={this.addContact} />
+            <Name onSubmit={this.addContact} myContacts={this.state.contacts} />
           </Chapter>
         </div>
 
