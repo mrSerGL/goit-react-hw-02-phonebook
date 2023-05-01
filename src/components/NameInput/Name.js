@@ -46,8 +46,7 @@ class Name extends Component {
 
     const existingContact = this.props.myContacts.find(
       contact =>
-        contact.name.toLowerCase() === this.state.name.toLowerCase() ||
-        contact.number === this.state.number
+        contact.name.toLowerCase() === this.state.name.toLowerCase() 
     );
 
     if (existingContact) {
