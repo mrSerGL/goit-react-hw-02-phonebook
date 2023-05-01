@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
+import propTypes from 'prop-types';
 import Chapter from 'components/Chapter';
 import css from './Name.module.css';
 
@@ -117,4 +118,10 @@ class Name extends Component {
     );
   }
 }
+
+Name.propTypes={
+  onSubmit: propTypes.func.isRequired,
+  myContacts: propTypes.arrayOf(propTypes.object).isRequired,
+};
+
 export default Name;

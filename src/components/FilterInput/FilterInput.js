@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import css from './FilterInput.module.css';
 
 function FilterInput({ value, onChangeFilter }) {
@@ -17,5 +18,10 @@ function FilterInput({ value, onChangeFilter }) {
     </>
   );
 }
+
+FilterInput.propTypes = {
+  onChangeFilterr: propTypes.func,
+  value: propTypes.string,
+};
 
 export default FilterInput;

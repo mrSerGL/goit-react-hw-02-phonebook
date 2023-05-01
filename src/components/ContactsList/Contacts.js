@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import css from './Contacts.module.css';
 
 function Contacts({ data, onDeleteContact }) {
@@ -23,5 +24,10 @@ function Contacts({ data, onDeleteContact }) {
     </div>
   );
 }
+
+Contacts.propTypes = {
+  data: propTypes.arrayOf(propTypes.object).isRequired,
+  onDeleteContact: propTypes.func.isRequired,
+};
 
 export default Contacts;
