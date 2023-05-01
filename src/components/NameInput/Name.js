@@ -44,9 +44,16 @@ class Name extends Component {
     );
   
     if (existingContact) {
-      alert('Contact already exists!');
+      alert(`${this.state.name} is already exists in contacts!`);
       return;
     }
+
+    // const { name, number } = this.state;
+
+    // if (this.props.myContacts.some(contact => contact.name === name)) {
+    //   alert(`${name} is already exists in contacts!`);
+    //   return;
+    // }
 
     this.props.onSubmit(this.state);
 
