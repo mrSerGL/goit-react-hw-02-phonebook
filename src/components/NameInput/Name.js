@@ -10,9 +10,9 @@ class Name extends Component {
     number: '',
   };
 
-  // жорстко закодувати значення id для елементів input, так і для елементів label.
-  nameInputId1 = nanoid();
-  nameInputId2 = nanoid();
+
+  // nameInputId1 = nanoid();
+  // nameInputId2 = nanoid();
 
   handleChangeName = event => {
     const id = nanoid();
@@ -37,9 +37,14 @@ class Name extends Component {
 
     console.log(this.props.myContacts)
 
-    if (this.props.myContacts.includes(this.state.name)){
-      console.log('in the list')
-      alert(`${this.state.name} is allready in contacts` );
+    const existingContact = this.props.myContacts.find(
+      contact =>
+        contact.name.toLowerCase() === this.state.name.toLowerCase() ||
+        contact.number === this.state.number
+    );
+  
+    if (existingContact) {
+      alert('Contact already exists!');
       return;
     }
 
